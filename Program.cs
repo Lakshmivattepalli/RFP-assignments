@@ -6,16 +6,31 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             Console.WriteLine("Hello, Welcome to the Employee Wage Computations Program");
-=======
-            Console.WriteLine("Hello! Welcome to Employee Wage Computation Program");
->>>>>>> Hello
-=======
-            Console.WriteLine("Hello! Welcome to Employee Wage Computation Program");
->>>>>>> Hello
             Console.ReadLine();
+        }
+        internal class Class1
+        {
+            int is_Full_Time = 1;
+            int is_Part_Time = 2;
+
+              Random obj = new Random();
+
+            public void Employee()
+            {
+                int empCheck = obj.Next(0, 2);
+                if (empCheck == is_Full_Time)
+                {
+                    Console.WriteLine("Employee is Present");
+                }
+                else
+                {
+                    Console.WriteLine("Employee is Absent");
+                }
+            }
+
         }
     }
 }
+
