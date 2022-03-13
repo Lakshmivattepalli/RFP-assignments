@@ -6,7 +6,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello, Welcome to the Employee Wage Computations Program");
+            Console.ReadLine();
         }
     }
 }
