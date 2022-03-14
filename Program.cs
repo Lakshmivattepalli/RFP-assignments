@@ -74,6 +74,34 @@ namespace ConsoleApp1
                 empWage = empHrs * empRatePerHr;
                 Console.WriteLine(" The salary of this Employee is:" + empWage );
             }
+            public void WageSwitch()
+            {
+                int randomCheck = obj.Next(0, 3);
+                switch (randomCheck)
+                {
+
+                case 1:
+
+                        empHrs = 8;
+                        Console.WriteLine("Employee is working for full day");
+                        break;
+
+
+                case 2:
+                         
+                        empHrs = 4;
+                        Console.WriteLine("Employee is working for half-day");
+                        break;    
+                case 0:
+
+                        empHrs = 0;
+                        Console.WriteLine("Emplyee is absent");
+                        break;
+
+                }
+                empWage = empHrs * empRatePerHr;
+                Console.WriteLine(" The salary of an employee for one day is:" + empWage);
+            }
 
        }
 
