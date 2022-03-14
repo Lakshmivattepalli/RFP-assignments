@@ -17,15 +17,17 @@ namespace ConsoleApp1
         }
 
 
-       internal class Class1
-       {
+        internal class Class1
+        {
             int is_Full_Time = 1;
             int is_Part_Time = 2;
             int maxRatePerMonth = 100;
             int empRatePerHr = 20;
+            int numOfWorkingDays = 20;
+            int totalWorkingDays = 20;
             int empHrs = 0;
             int empWage = 0;
-            int totalWorkingDays = 20;
+            int totalEmpHr = 0;
             int totalSalary = 0;
 
             Random obj = new Random();
@@ -74,7 +76,7 @@ namespace ConsoleApp1
                     Console.WriteLine("Employee has worked half day");
                 }
                 empWage = empHrs * empRatePerHr;
-                Console.WriteLine(" The salary of this Employee is:" + empWage );
+                Console.WriteLine(" The salary of this Employee is:" + empWage);
             }
             public void WageSwitch()
             {
@@ -82,19 +84,19 @@ namespace ConsoleApp1
                 switch (randomCheck)
                 {
 
-                case 1:
+                    case 1:
 
                         empHrs = 8;
                         Console.WriteLine("Employee is working for full day");
                         break;
 
 
-                case 2:
-                         
+                    case 2:
+
                         empHrs = 4;
                         Console.WriteLine("Employee is working for half-day");
-                        break;    
-                case 0:
+                        break;
+                    case 0:
 
                         empHrs = 0;
                         Console.WriteLine("Emplyee is absent");
@@ -106,7 +108,7 @@ namespace ConsoleApp1
             }
             public void Wagemonth()
             {
-                for (int day =1; day<= totalWorkingDays; day++)
+                for (int day = 1; day <= totalWorkingDays; day++)
                 {
                     int randomCheck = obj.Next(0, 3);
                     switch (randomCheck)
@@ -130,12 +132,41 @@ namespace ConsoleApp1
                     totalSalary = (totalSalary + empWage);
 
                     Console.WriteLine("Total salary of an employee per month is " + totalSalary);
-                    
+
                 }
             }
-
-       }
-
+            public void totalWorkingHrMonth()
+            {
+                while (totalEmpHr < maxRatePerMonth && totalWorkingDays < numOfWorkingDays)
+                {
+                    totalWorkingDays++;
+                    int randomCheck = obj.Next(0, 3);
+                    switch (randomCheck)
+                    {
+                        case -1:
+                            {
+                                empHrs = 8;
+                                break;
+                            }
+                        case -2:
+                            {
+                                empHrs = 4;
+                                break;
+                            }
+                        case -0:
+                            {
+                                empHrs = 0;
+                                break;
+                            }
+                    }
+                    totalEmpHr = (totalEmpHr + empHrs);
+                }
+                int totalSalary = (totalEmpHr * empRatePerHr);
+                Console.WriteLine(" the total salary of an emoloyee is" + totalSalary);
+                Console.WriteLine(" total working hours of an employee is" + totalEmpHr);
+                Console.WriteLine("total sorking days of an employee is" + totalWorkingDays);
+            }
+        }
 
        
     }
