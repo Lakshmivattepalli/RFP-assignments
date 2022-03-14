@@ -25,6 +25,8 @@ namespace ConsoleApp1
             int empRatePerHr = 20;
             int empHrs = 0;
             int empWage = 0;
+            int totalWorkingDays = 20;
+            int totalSalary = 0;
 
             Random obj = new Random();
 
@@ -101,6 +103,35 @@ namespace ConsoleApp1
                 }
                 empWage = empHrs * empRatePerHr;
                 Console.WriteLine(" The salary of an employee for one day is:" + empWage);
+            }
+            public void Wagemonth()
+            {
+                for (int day =1; day<= totalWorkingDays; day++)
+                {
+                    int randomCheck = obj.Next(0, 3);
+                    switch (randomCheck)
+                    {
+                        case 1:
+
+                            empHrs = 8;
+                            break;
+
+                        case 2:
+
+                            empHrs = 4;
+                            break;
+
+                        case 0:
+
+                            empHrs = 0;
+                            break;
+                    }
+                    empWage = empHrs * empRatePerHr;
+                    totalSalary = (totalSalary + empWage);
+
+                    Console.WriteLine("Total salary of an employee per month is " + totalSalary);
+                    
+                }
             }
 
        }
